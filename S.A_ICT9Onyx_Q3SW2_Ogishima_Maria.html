@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap" rel="stylesheet">
+	<title>Q4 Seatwork2</title>
+	<style type="text/css">
+		body{
+			background-color: #748488;
+		}
+		p{
+			font-family: 'Barlow Condensed', sans-serif;
+			color: #f4f6f7;
+			text-align: center;
+		}
+		h1{
+			text-align: center;
+			color: #ffffff;
+		}
+		h2{
+			color: #c8d2d5;
+		}
+		table{
+			table-layout: fixed;
+			width: 100%;
+			background-color: #b2c0c4;
+			padding: 10px;
+		}
+		tr{
+			background-color: #e9edee;
+			padding: 10px;
+			color: #3a4244;
+		}
+		button{
+			color: #2b3133;
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div style="background-color: #a7b7bb; padding: 10px;">
+
+		<h1>Date Today:</h1>
+		<div style="text-align:center;"><p id="today"></p></div>
+
+	</div>
+
+	<script>
+		const date = new Date();
+		document.getElementById("today").innerHTML = date;
+	</script>
+
+	<h2>Enter temperature in degrees Fahrenheit:</h2>
+
+    	<input type="number" id="fahrenheit">
+
+    	<button onclick="convert()">Convert</button>
+    		
+    	<p id="celsius"></p>
+
+    <script>
+      function convert() {
+        var fahrenheit = document.getElementById("fahrenheit").value;
+        var celsius = (fahrenheit - 32) * 5/9;
+        document.getElementById("celsius").innerHTML = celsius.toFixed(2) + " degrees Celsius";
+      }
+    </script>
+
+    <table border="1">
+  		<tr>
+   		 	<th>Celsius (0C)</th>
+    		<th>Fahrenheit (0F)</th>
+    		<th>Description</th>
+  		</tr>
+  		<tr>
+   			<td>-273.15</td>
+    		<td>-459.67 -</td>
+    		<td>Absolute zero temperature</td>
+  		</tr>
+  		<tr>
+   	 		<td>0</td>
+    		<td>32.0</td>
+    		<td>Freezing/melting point of water</td>
+  		</tr>
+  		<tr>
+    		<td>21</td>
+    		<td>69.8 </td>
+    		<td>Room temperature</td>
+  		</tr>
+  		<tr>
+  			<td>37 </td>
+  			<td>98.6 </td>
+  			<td>Average body temperature</td>
+  		</tr>
+  		<tr>
+  			<td>100 </td>
+  			<td>212.0 </td>
+  			<td>Boiling point of water</td>
+  		</tr>
+	</table>
+</body>
+</html>
